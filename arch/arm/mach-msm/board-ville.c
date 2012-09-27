@@ -366,7 +366,7 @@ enum {
 
 #define MSM_PMEM_ADSP_SIZE         0x6D00000 /* Need to be multiple of 64K */
 #define MSM_PMEM_ADSP2_SIZE        0x700000
-#define MSM_PMEM_AUDIO_SIZE        0x2B4000
+#define MSM_PMEM_AUDIO_SIZE        0x4CF000
 #ifdef CONFIG_MSM_IOMMU
 #define MSM_PMEM_SIZE 0x00000000 /* 0 Mbytes */
 #else
@@ -375,7 +375,7 @@ enum {
 #define MSM_LIQUID_PMEM_SIZE 0x4000000 /* 64 Mbytes */
 
 #ifdef CONFIG_MSM_MULTIMEDIA_USE_ION
-#define MSM_PMEM_KERNEL_EBI1_SIZE  0x280000
+#define MSM_PMEM_KERNEL_EBI1_SIZE  0x65000
 #define MSM_ION_SF_SIZE		MSM_PMEM_SIZE
 #define MSM_ION_MM_FW_SIZE	0x200000 /* (2MB) */
 #ifdef CONFIG_MSM_IOMMU
