@@ -29,7 +29,7 @@ void show_meminfo(void)
 	unsigned long pages[NR_LRU_LISTS];
 	int lru;
 	unsigned long ion_alloc  = ion_iommu_heap_dump_size();
-	unsigned long kgsl_alloc  = kgsl_get_alloc_size();
+	unsigned long kgsl_alloc  = 0; // TODO: show kgsl alloc somehow
 	unsigned long subtotal;
 
 /*
@@ -95,7 +95,7 @@ static int meminfo_proc_show(struct seq_file *m, void *v)
 	unsigned long pages[NR_LRU_LISTS];
 	int lru;
 	unsigned long ion_alloc  = ion_iommu_heap_dump_size();
-	unsigned long kgsl_alloc  = kgsl_get_alloc_size();
+	unsigned long kgsl_alloc  = 0; // TODO: show kgsl alloc somehow
 	unsigned long subtotal;
 
 /*
