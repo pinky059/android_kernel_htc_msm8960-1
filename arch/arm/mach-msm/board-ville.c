@@ -898,6 +898,7 @@ static void __init ville_reserve(void)
 	fmem_pdata.align = PAGE_SIZE;
 	fmem_pdata.phys = reserve_memory_for_fmem(fmem_pdata.size, fmem_pdata.align);
 }
+
 static int msm8960_change_memory_power(u64 start, u64 size,
 	int change_type)
 {
@@ -3398,8 +3399,6 @@ static struct i2c_board_info msm_i2c_gsbi8_mhl_sii9234_info[] =
 #endif
 #endif
 
-
-
 static void __init msm8960_allocate_memory_regions(void)
 {
 	void *addr;
@@ -3454,6 +3453,7 @@ static struct slim_device msm_slim_tabla = {
 		.platform_data = &tabla_platform_data,
 	},
 };
+
 static struct tabla_pdata tabla20_platform_data = {
 	.slimbus_slave_device = {
 		.name = "tabla-slave",
@@ -3559,50 +3559,50 @@ static struct platform_device msm_device_wcnss_wlan = {
 
 /* Begin Bus scaling definitions */
 static struct msm_bus_vectors crypto_hw_init_vectors[] = {
-        {
-                .src = MSM_BUS_MASTER_ADM_PORT0,
-                .dst = MSM_BUS_SLAVE_EBI_CH0,
-                .ab = 0,
-                .ib = 0,
-        },
-        {
-                .src = MSM_BUS_MASTER_ADM_PORT1,
-                .dst = MSM_BUS_SLAVE_GSBI1_UART,
-                .ab = 0,
-                .ib = 0,
-        },
+	{
+		.src = MSM_BUS_MASTER_ADM_PORT0,
+		.dst = MSM_BUS_SLAVE_EBI_CH0,
+		.ab = 0,
+		.ib = 0,
+	},
+	{
+		.src = MSM_BUS_MASTER_ADM_PORT1,
+		.dst = MSM_BUS_SLAVE_GSBI1_UART,
+		.ab = 0,
+		.ib = 0,
+	},
 };
 
 static struct msm_bus_vectors crypto_hw_active_vectors[] = {
-        {
-                .src = MSM_BUS_MASTER_ADM_PORT0,
-                .dst = MSM_BUS_SLAVE_EBI_CH0,
-                .ab = 70000000UL,
-                .ib = 70000000UL,
-        },
-        {
-                .src = MSM_BUS_MASTER_ADM_PORT1,
-                .dst = MSM_BUS_SLAVE_GSBI1_UART,
-                .ab = 2480000000UL,
-                .ib = 2480000000UL,
-        },
+	{
+		.src = MSM_BUS_MASTER_ADM_PORT0,
+		.dst = MSM_BUS_SLAVE_EBI_CH0,
+		.ab = 70000000UL,
+		.ib = 70000000UL,
+	},
+	{
+		.src = MSM_BUS_MASTER_ADM_PORT1,
+		.dst = MSM_BUS_SLAVE_GSBI1_UART,
+		.ab = 2480000000UL,
+		.ib = 2480000000UL,
+	},
 };
 
 static struct msm_bus_paths crypto_hw_bus_scale_usecases[] = {
-        {
-                ARRAY_SIZE(crypto_hw_init_vectors),
-                crypto_hw_init_vectors,
-        },
-        {
-                ARRAY_SIZE(crypto_hw_active_vectors),
-                crypto_hw_active_vectors,
-        },
+	{
+		ARRAY_SIZE(crypto_hw_init_vectors),
+		crypto_hw_init_vectors,
+	},
+	{
+		ARRAY_SIZE(crypto_hw_active_vectors),
+		crypto_hw_active_vectors,
+	},
 };
 
 static struct msm_bus_scale_pdata crypto_hw_bus_scale_pdata = {
-                crypto_hw_bus_scale_usecases,
-                ARRAY_SIZE(crypto_hw_bus_scale_usecases),
-                .name = "cryptohw",
+	crypto_hw_bus_scale_usecases,
+	ARRAY_SIZE(crypto_hw_bus_scale_usecases),
+	.name = "cryptohw",
 };
 /* End Bus Scaling Definitions*/
 
