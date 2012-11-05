@@ -395,9 +395,9 @@ enum {
 #define MSM_ION_MFC_SIZE	0x100000  //SZ_8K
 
 #ifdef CONFIG_MSM_IOMMU
-#define MSM_ION_HEAP_NUM	7
+#define MSM_ION_HEAP_NUM	6
 #else
-#define MSM_ION_HEAP_NUM	8
+#define MSM_ION_HEAP_NUM	7
 #endif
 #define MSM_LIQUID_ION_MM_SIZE (MSM_ION_MM_SIZE + 0x600000)
 
